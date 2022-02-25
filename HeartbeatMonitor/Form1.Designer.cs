@@ -77,6 +77,7 @@ namespace HeartbeatMonitor
             this.intervalInput.Size = new System.Drawing.Size(100, 20);
             this.intervalInput.TabIndex = 2;
             this.intervalInput.Text = "300";
+            this.intervalInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.intervalInput_KeyPress);
             // 
             // saveButton
             // 

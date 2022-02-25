@@ -20,20 +20,35 @@ namespace HeartbeatMonitor
             this.MaximizeBox = false;
             logTimer.Start();
         }
+        private void intervalInput_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
 
+        }
         private void logTimer_Tick(object sender, EventArgs e)
         {
             logDisplay.Text = File.ReadAllText("log.txt");
+            logDisplay.SelectionStart = logDisplay.Text.Length;
+            logDisplay.ScrollToCaret();
         }
         
         private void saveButton_Click(object sender, EventArgs e)
         {
-            File.WriteAllText("config.ini", addressInput.Text + ",");
-            File.AppendAllText("config.ini", intervalInput.Text);
-            File.AppendAllText("log.txt", "Updated config.ini" + Environment.NewLine);
             heartbeatTimer.Stop();
-            heartbeatTimer.Interval = int.Parse(intervalInput.Text) * 1000;
-            heartbeatTimer.Start();
+            try
+            {
+                heartbeatTimer.Interval = int.Parse(intervalInput.Text) * 1000;
+                heartbeatTimer.Start();
+                File.WriteAllText("config.ini", addressInput.Text + ",");
+                File.AppendAllText("config.ini", intervalInput.Text);
+                File.AppendAllText("log.txt", "Updated config.ini" + Environment.NewLine);
+            } catch (Exception ex) when (ex is System.FormatException || ex is System.ArgumentOutOfRangeException)
+            {
+                intervalInput.Text = "That isn't valid";
+            }
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -46,6 +61,7 @@ namespace HeartbeatMonitor
         private void NotifyIcon_DoubleClick(object sender, EventArgs e)
         {
             this.Show();
+            ShowInTaskbar = true;
         }
         private void quit(object sender, EventArgs e)
         {
@@ -77,9 +93,9 @@ namespace HeartbeatMonitor
                     this.Hide();
                     ShowInTaskbar = false;
                 }
-                catch (System.IndexOutOfRangeException)
+                catch (Exception ex) when (ex is System.IndexOutOfRangeException || ex is System.FormatException || ex is System.ArgumentOutOfRangeException)
                 {
-                    File.AppendAllText("log.txt", "Config found but was unreadable." + Environment.NewLine + "Please configure the address and interval");
+                    File.AppendAllText("log.txt", "Config found but was unreadable." + Environment.NewLine + "Please configure the address and interval" + Environment.NewLine);
                     this.Show();
                     ShowInTaskbar = true;
                 }

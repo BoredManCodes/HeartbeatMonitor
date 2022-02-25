@@ -1,14 +1,2 @@
 Sucessfully intialised
 Loaded config.ini
-Updated config.ini
-Sent heartbeat at 7:18:53 AM
-Sent heartbeat at 7:18:58 AM
-Sent heartbeat at 7:19:03 AM
-Sent heartbeat at 7:19:08 AM
-Sent heartbeat at 7:19:13 AM
-Sent heartbeat at 7:19:18 AM
-Sent heartbeat at 7:19:23 AM
-Sent heartbeat at 7:19:28 AM
-Sent heartbeat at 7:19:33 AM
-Sent heartbeat at 7:19:38 AM
-Sent heartbeat at 7:19:43 AM
