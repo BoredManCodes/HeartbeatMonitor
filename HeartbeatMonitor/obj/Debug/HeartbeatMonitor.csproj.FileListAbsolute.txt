@@ -1,0 +1,10 @@
+C:\Users\BoredMan\source\repos\HeartbeatMonitor\HeartbeatMonitor\bin\Debug\HeartbeatMonitor.exe.config
+C:\Users\BoredMan\source\repos\HeartbeatMonitor\HeartbeatMonitor\bin\Debug\HeartbeatMonitor.exe
+C:\Users\BoredMan\source\repos\HeartbeatMonitor\HeartbeatMonitor\bin\Debug\HeartbeatMonitor.pdb
+C:\Users\BoredMan\source\repos\HeartbeatMonitor\HeartbeatMonitor\obj\Debug\HeartbeatMonitor.csproj.AssemblyReference.cache
+C:\Users\BoredMan\source\repos\HeartbeatMonitor\HeartbeatMonitor\obj\Debug\HeartbeatMonitor.Configuration.resources
+C:\Users\BoredMan\source\repos\HeartbeatMonitor\HeartbeatMonitor\obj\Debug\HeartbeatMonitor.Properties.Resources.resources
+C:\Users\BoredMan\source\repos\HeartbeatMonitor\HeartbeatMonitor\obj\Debug\HeartbeatMonitor.csproj.GenerateResource.cache
+C:\Users\BoredMan\source\repos\HeartbeatMonitor\HeartbeatMonitor\obj\Debug\HeartbeatMonitor.csproj.CoreCompileInputs.cache
+C:\Users\BoredMan\source\repos\HeartbeatMonitor\HeartbeatMonitor\obj\Debug\HeartbeatMonitor.exe
+C:\Users\BoredMan\source\repos\HeartbeatMonitor\HeartbeatMonitor\obj\Debug\HeartbeatMonitor.pdb
