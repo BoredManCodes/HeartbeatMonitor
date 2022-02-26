@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Win32;
+using System.Net.Http;
 
 namespace HeartbeatMonitor
 {
@@ -20,6 +22,7 @@ namespace HeartbeatMonitor
             this.MaximizeBox = false;
             logTimer.Start();
         }
+        private static readonly HttpClient client = new HttpClient();
         private void intervalInput_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -88,10 +91,19 @@ namespace HeartbeatMonitor
                     File.AppendAllText("log.txt", "Loaded config.ini" + Environment.NewLine);
                     addressInput.Text = configValues[0];
                     intervalInput.Text = configValues[1];
+                    bool startup = File.Exists(".startup");
+                    if (startup)
+                    {
+                        startupCheck.Checked = true;
+                    } else
+                    {
+                        startupCheck.Checked = false;
+                    }
                     heartbeatTimer.Interval = int.Parse(configValues[1]) * 1000;
                     heartbeatTimer.Start();
                     this.Hide();
                     ShowInTaskbar = false;
+                    SetStartup();
                 }
                 catch (Exception ex) when (ex is System.IndexOutOfRangeException || ex is System.FormatException || ex is System.ArgumentOutOfRangeException)
                 {
@@ -110,9 +122,41 @@ namespace HeartbeatMonitor
         
         }
 
-        private void heartbeatTimer_Tick(object sender, EventArgs e)
+        private async void heartbeatTimer_Tick(object sender, EventArgs e)
         {
-            File.AppendAllText("log.txt", "Sent heartbeat at " + DateTime.Now.ToString("h:mm:ss tt") + Environment.NewLine);
+            File.AppendAllText("log.txt", "Sending heartbeat at " + DateTime.Now.ToString("h:mm:ss tt") + Environment.NewLine);
+            String config = File.ReadAllText("config.ini");
+            String[] configValues = config.Split(',');
+            var responseString = await client.GetStringAsync(configValues[0]);
+            if (responseString.Contains("true"))
+            {
+                File.AppendAllText("log.txt", "Heartbeat confirmed received at " + DateTime.Now.ToString("h:mm:ss tt") + Environment.NewLine);
+            } else if (responseString.Contains("false"))
+            {
+                File.AppendAllText("log.txt", "Heartbeat server refused heartbeat at " + DateTime.Now.ToString("h:mm:ss tt") + Environment.NewLine);
+            }
+        }
+        private void SetStartup()
+        {
+            RegistryKey rk = Registry.CurrentUser.OpenSubKey
+                ("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+
+            if (startupCheck.Checked)
+                rk.SetValue("Heartbeat Monitor", Application.ExecutablePath);
+            else
+                rk.DeleteValue("Heartbeat Monitor", false);
+
+        }
+
+        private void startupChecked_CheckedChanged(object sender, EventArgs e)
+        {
+            if (startupCheck.Checked)
+            {
+                File.WriteAllText(".startup", "exists");
+            } else
+            {
+                File.Delete(".startup");
+            }
         }
     }
 

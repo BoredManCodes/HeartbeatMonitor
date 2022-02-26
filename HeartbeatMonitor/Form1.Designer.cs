@@ -41,6 +41,7 @@ namespace HeartbeatMonitor
             this.logDisplay = new System.Windows.Forms.TextBox();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.heartbeatTimer = new System.Windows.Forms.Timer(this.components);
+            this.startupCheck = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // addressInput
@@ -124,12 +125,26 @@ namespace HeartbeatMonitor
             // 
             this.heartbeatTimer.Tick += new System.EventHandler(this.heartbeatTimer_Tick);
             // 
+            // startupCheck
+            // 
+            this.startupCheck.AutoSize = true;
+            this.startupCheck.Checked = true;
+            this.startupCheck.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.startupCheck.Location = new System.Drawing.Point(9, 61);
+            this.startupCheck.Name = "startupCheck";
+            this.startupCheck.Size = new System.Drawing.Size(101, 17);
+            this.startupCheck.TabIndex = 8;
+            this.startupCheck.Text = "Run on Starup?";
+            this.startupCheck.UseVisualStyleBackColor = true;
+            this.startupCheck.CheckedChanged += new System.EventHandler(this.startupChecked_CheckedChanged);
+            // 
             // Configuration
             // 
             this.AcceptButton = this.saveButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(226, 335);
+            this.Controls.Add(this.startupCheck);
             this.Controls.Add(this.logDisplay);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.saveButton);
@@ -161,6 +176,7 @@ namespace HeartbeatMonitor
         private System.Windows.Forms.TextBox logDisplay;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.Timer heartbeatTimer;
+        private System.Windows.Forms.CheckBox startupCheck;
     }
 }
 

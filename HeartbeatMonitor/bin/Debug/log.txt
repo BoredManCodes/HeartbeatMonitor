@@ -1,2 +1,72 @@
 Sucessfully intialised
 Loaded config.ini
+Sending heartbeat at 2:59:30 PM
+Heartbeat confirmed received at 2:59:31 PM
+Updated config.ini
+Sending heartbeat at 3:00:02 PM
+Heartbeat server refused heartbeat at 3:00:02 PM
+Sending heartbeat at 3:00:22 PM
+Heartbeat server refused heartbeat at 3:00:22 PM
+Sending heartbeat at 3:00:42 PM
+Heartbeat server refused heartbeat at 3:00:42 PM
+Updated config.ini
+Sending heartbeat at 3:01:04 PM
+Heartbeat confirmed received at 3:01:04 PM
+Sending heartbeat at 3:01:24 PM
+Heartbeat confirmed received at 3:01:24 PM
+Sending heartbeat at 3:01:44 PM
+Heartbeat confirmed received at 3:01:44 PM
+Sending heartbeat at 3:02:04 PM
+Heartbeat confirmed received at 3:02:04 PM
+Sending heartbeat at 3:02:24 PM
+Heartbeat confirmed received at 3:02:24 PM
+Sending heartbeat at 3:02:44 PM
+Heartbeat confirmed received at 3:02:44 PM
+Sending heartbeat at 3:03:04 PM
+Heartbeat confirmed received at 3:03:04 PM
+Sending heartbeat at 3:03:24 PM
+Heartbeat confirmed received at 3:03:24 PM
+Sending heartbeat at 3:03:44 PM
+Heartbeat confirmed received at 3:03:44 PM
+Sending heartbeat at 3:04:04 PM
+Heartbeat confirmed received at 3:04:04 PM
+Sending heartbeat at 3:04:24 PM
+Heartbeat confirmed received at 3:04:24 PM
+Sending heartbeat at 3:04:44 PM
+Heartbeat confirmed received at 3:04:44 PM
+Sending heartbeat at 3:05:04 PM
+Heartbeat confirmed received at 3:05:04 PM
+Sending heartbeat at 3:05:24 PM
+Heartbeat confirmed received at 3:05:24 PM
+Sending heartbeat at 3:05:44 PM
+Heartbeat confirmed received at 3:05:44 PM
+Sending heartbeat at 3:06:04 PM
+Heartbeat confirmed received at 3:06:04 PM
+Sending heartbeat at 3:06:24 PM
+Heartbeat confirmed received at 3:06:24 PM
+Sending heartbeat at 3:06:44 PM
+Heartbeat confirmed received at 3:06:44 PM
+Sending heartbeat at 3:07:04 PM
+Heartbeat confirmed received at 3:07:04 PM
+Sending heartbeat at 3:07:24 PM
+Heartbeat confirmed received at 3:07:24 PM
+Sending heartbeat at 3:07:44 PM
+Heartbeat confirmed received at 3:07:44 PM
+Sending heartbeat at 3:08:04 PM
+Heartbeat confirmed received at 3:08:04 PM
+Sending heartbeat at 3:08:24 PM
+Heartbeat confirmed received at 3:08:24 PM
+Sending heartbeat at 3:08:44 PM
+Heartbeat confirmed received at 3:08:44 PM
+Sending heartbeat at 3:09:04 PM
+Heartbeat confirmed received at 3:09:04 PM
+Sending heartbeat at 3:09:24 PM
+Heartbeat confirmed received at 3:09:24 PM
+Sending heartbeat at 3:09:44 PM
+Heartbeat confirmed received at 3:09:45 PM
+Sending heartbeat at 3:10:04 PM
+Heartbeat confirmed received at 3:10:04 PM
+Sending heartbeat at 3:10:24 PM
+Heartbeat confirmed received at 3:10:24 PM
+Sending heartbeat at 3:10:44 PM
+Heartbeat confirmed received at 3:10:44 PM
